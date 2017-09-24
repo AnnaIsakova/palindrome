@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Main {
+public class IsakovaAnnaPalindrome {
 
     static boolean isPrime(long n) {
         if (n % 2 == 0) return false;
@@ -38,11 +38,11 @@ public class Main {
         long result = 0;
         long max = 0;
         for (int i = 0; i < numsToMul.size(); i++) {
-            nums[0] = numsToMul.get(i);
             for (int j = i; j < numsToMul.size(); j++) {
                 result = numsToMul.get(i) * numsToMul.get(j);
                 if (isPalindrome(result) && result > max){
                     max = result;
+                    nums[0] = numsToMul.get(i);
                     nums[1] = numsToMul.get(j);
                     nums[2] = max;
                 }
@@ -57,6 +57,6 @@ public class Main {
         long[] res = findGreatestPalindrome(primes);
         long after = System.currentTimeMillis();
         System.out.println(after - before); //2670 ms
-        System.out.println(Arrays.toString(res)); //[10007, 30109, 999949999]
+        System.out.println(Arrays.toString(res)); //[33211, 30109, 999949999]
     }
 }
